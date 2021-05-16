@@ -1,0 +1,17 @@
+<%- include("partials/head") %> 
+<div class="ui main container text segment">
+    <div class="ui huge header">Login</div>
+    <form action="/login" method="POST" class="ui form">   
+        <div class="field">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>    
+        <div class="field">
+            <label>Password</label>
+            <input name="password" placeholder="Password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        </div>
+        <button class="ui black basic button big">Login</button>
+    </form>
+</div>
+
+<%- include("partials/foot") %> 

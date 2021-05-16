@@ -1,0 +1,18 @@
+<%- include("partials/head") %> 
+<div class="ui main container text segment">
+    <div class="ui huge header">Register</div>
+    <form action="/register" method="POST" class="ui form">   
+        <div class="field">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>    
+        <div class="field">
+            <label>Create Password <p style="color: rgba(0,0,0,0.5);">(Alphanumeric having atleast one letter capital)<p></label>
+            <input name="password" placeholder="Password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        </div>
+        <button class="ui black basic button big">Register</button>
+    </form>
+</div>
+
+
+<%- include("partials/foot") %> 

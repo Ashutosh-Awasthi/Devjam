@@ -1,0 +1,20 @@
+i.icon{
+    font-size: 2em;
+}
+.container.main{
+    margin-top: 7em;
+}
+#delete{
+    display: inline;
+}
+.modButtons{
+    margin-top: 2rem;
+}
+a.btn.button{
+    float: right;
+    margin-right: 3rem;
+    margin-top: 1rem;
+}
+.ui.items>.item>.image>img{
+    height: 8em;
+}
