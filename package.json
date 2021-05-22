@@ -9,7 +9,7 @@
     "devStart": "nodemon app.js"
   },
   "keywords": [],
-  "author": "Shephards",
+  "author": "Shepherd",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
