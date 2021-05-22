@@ -57,6 +57,7 @@ router.get('/posts',(req,res)=>{
 
 router.get("/posts/search",(req,res)=>{    
     Post.find({$text: {$search: req.query.q}}).sort({score:{$meta: "textScore"}}).exec((err,sResults)=>{    
+        console.log(sResults,err);
         res.render("search/result",{Posts:sResults});
     })
 })

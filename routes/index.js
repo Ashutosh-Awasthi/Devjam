@@ -26,29 +26,38 @@ router.get("/register",(req,res)=>{
 router.post("/register",async(req,res)=>{
     try{
         password = await bcrypt.hash(req.body.password,10);
+        let data={
+            password: password,
+            username: req.body.username,
+            email: req.body.email,
+            description: req.body.description,
+            name: req.body.name,
+            address: req.body.address
+        }
+        User.findOne({$or:[{username: req.body.username},{email: req.body.email}]}).exec((err,fUser)=>{
+            console.log("YEs",fUser);
+            if(!err&&!fUser){
+                User.create(data,(err,newUser)=>{
+                    if(!err){
+                        console.log(newUser);
+                        req.flash("messageSuccess","Congrats! you have been registered. Now sign-in to get started");
+                        res.redirect("/login")
+                    }else{
+                        if(err.code===11000)
+                            req.flash("message","Username or Email has already been registered")
+                        res.render("register",{Posts: data})
+                    }
+                })
+            }else{
+                req.flash("message","username or email already existed");
+                console.log("Usr already exists")
+                res.render("register",{Posts: data})
+            }
+        })
+   
     }catch{
         res.redirect("/register");
     }
-    let data={
-        password: password,
-        username: req.body.username,
-        email: req.body.email,
-        description: req.body.description,
-        name: req.body.name,
-        address: req.body.address
-    }
-
-    User.create(data,(err,newUser)=>{
-        if(!err){
-            console.log(newUser);
-            req.flash("messageSuccess","Congrats! you have been registered. Now sign-in to get started");
-            res.redirect("/login")
-        }else{
-            if(err.code===11000)
-                req.flash("message","Username or Email has already been registered")
-            res.render("register",{Posts: data})
-        }
-    })
 })
 
 router.post("/login",passport.authenticate('local',{

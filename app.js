@@ -8,6 +8,7 @@ const Auth = require('./auth.js')
 const indexRoutes = require("./routes/index")
 const postsRoutes = require("./routes/Posts")
 const apiRoutes = require("./routes/api")
+const userRoutes = require("./routes/user")
 const app = express()
 const server = http.createServer(app)
 const port = process.env.PORT||3000
@@ -54,6 +55,7 @@ app.get("/",(req,res)=>{
 app.use(indexRoutes);
 app.use(postsRoutes);
 app.use(apiRoutes);
+app.use(userRoutes);
 
 app.get('/chat',isAuthenticated,(req,res)=>{
     res.render('chat/index');

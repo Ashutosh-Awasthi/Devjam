@@ -69,3 +69,8 @@ i:hover{
     color: brown;
     transition: all 100ms;
 }
+@media (max-width: 700px) {
+    .screen,.send{
+        width: 95vw;
+    }
+}

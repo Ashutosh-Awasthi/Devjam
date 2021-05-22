@@ -5,23 +5,21 @@
             <h1 class="big content">
                 <%= user.name %>
             </h1>
+            <hr>
             <div class="description">
-                <p>
-                    <%= user.username %>
+                <p><strong>Username/Alias:</strong>
+                    <span style="float: right;"><%= user.username %><span>
                 </p>
-                <p>
-                    <%= user.password %>
+                <p><strong>Description:</strong>
+                    <span style="float: right;"><%= user.description||"Unspecified" %><span>
                 </p>
-                <p>
-                    <%= user.description %>
+                <p> <strong>Address: </strong>   
+                   <span style="float: right;"><%= user.address %></span> 
                 </p>
-                <p>
-                    <%= user.address %>
+                <p><strong>Email: </strong>
+                    <span style="float: right;"><%= user.email %></span>
                 </p>
-                <p>
-                    <%= user.email %>
-                </p>
-
+                <a href="/user/edit">Edit details?</a>
             </div>
         </div>
 
