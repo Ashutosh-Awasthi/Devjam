@@ -23,12 +23,13 @@ Rating System of Posts/QNA section:
 				:On deletion of answer, reference of it automatically destroys.
 		parent: Its is a question post of the given answer.
 		 		:On deletion parent, answers to that post stays on.
+	Any Post can be searched using their authorName or Content.(Searches on index text search by MongoDB and Ranks them A/c to score). Best Results appears at the top.
 No two persons with same Alias or email can register.
 Chat features details:
 	Automatically indentifies the current user, and uses its alias to chat.(Ajax request)
 	Uses socket for connecting a broadcasting chat. 
 
-frontEnd features of the chat application:
+FrontEnd features of the chat application:
 	Uses web-speech api for speech to text conversion.
 	Message is automatically send only if certain words are used while using speech-to-text.
 	Micro features:
