@@ -1,0 +1,30 @@
+<%- include("../partials/head") %>
+
+    <div class="ui main container text segment" style="margin-top: auto;">
+        <div class="item">
+            <h1 class="big content">
+                <%= user.name %>
+            </h1>
+            <div class="description">
+                <p>
+                    <%= user.username %>
+                </p>
+                <p>
+                    <%= user.password %>
+                </p>
+                <p>
+                    <%= user.description %>
+                </p>
+                <p>
+                    <%= user.address %>
+                </p>
+                <p>
+                    <%= user.email %>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <%- include("../partials/foot") %>

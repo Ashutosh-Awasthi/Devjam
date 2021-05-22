@@ -1,0 +1,20 @@
+<%- include("../partials/head") %> 
+
+<div class="ui container main segment divided items" style="margin-top: auto;">
+    <% if (Posts.length == 0) { %>
+     <h4>No Answers to this Posts are there yet!</h4>
+    <% }else{ %>  
+    <% Posts.forEach((Posts)=>{ %>   
+        <div class="item">
+            <div class="content">
+              <div class="header"><%=  Posts.title %></div>
+              <div class="description">
+                <p><%= Posts.body %>...  <a href="/posts/<%=Posts._id%>" class="ui mini inverted button green btn">Read More</a> </p>
+              </div>
+            </div>
+          </div>
+    <% }) } %> 
+
+</div>
+
+<%- include("../partials/foot") %> 

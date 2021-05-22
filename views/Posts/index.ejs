@@ -1,0 +1,48 @@
+<%- include("../partials/head") %>
+
+
+  <div class="ui container main segment divided items" style="margin-top: auto;">
+    <% if (Posts.length==0) { %>
+      <h4>No Posts are there yet!</h4>
+      <% }else{ %>
+      
+      <form action="/posts/search" method="get">
+        <div class="ui icon input" style="float: right; margin-bottom: 1rem;">
+            <input type="text" placeholder="Search..." name="q">
+            <button><i class="circular search link icon" style="font-size: 1em;"></i></button>
+        </div>
+      </form>
+
+        <% Posts.forEach((Posts)=>{ %>
+
+          <div class="item">
+            <div class="content">
+              <div class="header"> <a href="/posts/<%= Posts.parent||Posts._id %>">
+                  <%= Posts.title %>
+                </a> </div>
+              <div class="description">
+                <p>
+                  <%= Posts.body.slice(0,537) %>
+                  <% if (Posts.body.length>530) { %>
+                   ...
+                  <% } %>
+                </p>
+                <a href="/Posts/<%=Posts._id%>"
+                  class="ui mini inverted button green btn">Read More</a>
+                <% if(Posts.references.length){ %>
+                <a href="/<%=Posts._id%>/answers%>" class="ui mini inverted button green btn">View Answers</a>
+                <% } %>
+                <p><em>By: <%= Posts.author.authorname %></em></p>
+                <% if (Posts.visits==0) { %>
+                  <p>Rating: unrated</p>
+                  <% }else{ %>
+                    <p>Rating: <%= ((Posts.ratings||0)/(Posts.visits||1)).toFixed(1).replace(/\.0+$/,'') %>/5</p>
+                    <% } %>
+              </div>
+            </div>
+          </div>
+          <% }) } %>
+
+  </div>
+
+  <%- include("../partials/foot") %>

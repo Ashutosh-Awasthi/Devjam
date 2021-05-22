@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYPHER_TRAXON</title>
+    <title>SHEPHERD</title>
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
         integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
         crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="/styles/index.css">
+    <style>
+        p {
+            word-break: break-word;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="ui fixed inverted menu">
         <div class="ui container">
             <a href="/" class="item"><i class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -21,11 +27,11 @@
                         class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                     </svg></i></a>
-            <a href="/" class="item">Home</a>
-            <a href="/" class="item">New</a>
+            <a href="/posts" class="item">QnA</a>
+            <a href="/posts/new" class="item">New</a>
             <div class="right menu">
                 <% if(currentUser){ %>
-                    <a class="item" href="#">
+                    <a class="item" href="/user">
                         <%= currentUser.username %>
                     </a>
                     <a href="/logout" class="item">Logout</a>
@@ -33,6 +39,30 @@
                         <a href="/login" class="item">Login</a>
                         <a href="/register" class="item">Register</a>
                         <% } %>
+                            <a href="#" class="item">About Us</a>
             </div>
         </div>
     </div>
+    <% if(message.length){ %>
+        <div class="ui mini red message" style="margin-top: 70px; text-align: center; width: 700px;    margin-left: auto;
+        margin-right: auto;">
+            <div class="header">
+                <%= message %>
+            </div>
+        </div>
+    <% }else if(messageSuccess.length){ %>
+        <div class="ui mini green message" style="margin-top: 70px; text-align: center; width: 700px;    margin-left: auto;
+        margin-right: auto;">
+            <div class="header">
+                <%= messageSuccess %>
+            </div>
+        </div>
+    <% } else { %>
+
+        <div class="ui mini green message" style="margin-top: 70px; text-align: center; width: 700px;    margin-left: auto;
+            margin-right: auto; visibility: hidden;">
+            <div class="header">
+                easter Eggs
+            </div>
+        </div>
+    <% } %>

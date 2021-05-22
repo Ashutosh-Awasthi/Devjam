@@ -1,0 +1,17 @@
+<%- include("../partials/head") %> 
+<div class="ui main container text segment" style="margin-top: auto;">
+    <div class="ui huge header">Edit</div>
+    <form action="/posts/<%= Posts._id %>/edit" method="POST" class="ui form">
+        <div class="field">
+            <label>Edit Title</label>
+            <input type="text" name="Post[title]" placeholder="Title" value="<%= Posts.title %>">
+        </div>        
+        <div class="field">
+            <label>Edit Body</label>
+            <textarea name="Post[body]" placeholder="Body"><%= Posts.body %></textarea>
+        </div>
+        <button class="ui black basic button big">Submit</button>
+    </form>
+</div>
+
+<%- include("../partials/foot") %> 

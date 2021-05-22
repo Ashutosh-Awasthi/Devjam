@@ -1,0 +1,18 @@
+<%- include("../partials/head") %> 
+<div class="ui main container text segment" style="margin-top: auto;">
+    <div class="ui huge header">New Query</div>
+    <form action="/posts" method="POST" class="ui form">
+        <div class="field">
+            <label>Title</label>
+            <input type="text" name="Post[title]" placeholder="Title" required>
+        </div>        
+        <div class="field">
+            <label>Body</label>
+            <textarea name="Post[body]" placeholder="Body" required></textarea>
+        </div>
+        <button class="ui black basic button big" type="reset">Reset</button>
+        <button class="ui black basic button big" type="submit">Submit</button>
+    </form>
+</div>
+
+<%- include("../partials/foot") %> 
