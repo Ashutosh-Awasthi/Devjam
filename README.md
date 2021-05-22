@@ -1,5 +1,6 @@
 # Devjam
-SHEPHERD - An online website to revolutionize educational paradigm .  
+SHEPHERD - An online website to revolutionize educational paradigm . 
+StudentSite is a webApplication which is aimed to connect students,teachers together for doubt solving, guidance, and study materials. The site uses a post section for students to ask/answer queries, a chat section which connects student realtime for faster resolving of queries. The website is secured local Strategy authentication and can be improved on demand.
 
 visit the hosted site: https://all-students-related.herokuapp.com/
 
