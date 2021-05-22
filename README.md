@@ -1,8 +1,9 @@
 # Devjam
 SHEPHERD - An online website to revolutionize educational paradigm . 
-StudentSite is a webApplication which is aimed to connect students,teachers together for doubt solving, guidance, and study materials. The site uses a post section for students to ask/answer queries, a chat section which connects student realtime for faster resolving of queries. The website is secured local Strategy authentication and can be improved on demand.
+StudentSite is a webApplication which is aimed to connect students,teachers together for doubt solving, guidance, and study materials. The site uses a post section for students to ask/answer queries, a chat section which connects student realtime for faster resolving of queries. The website is secured local Strategy authentication and can be improved on demand.This application has a very vast scope, both education and e-commerce. For eduction, numerous features can be added like: Video Communication using WebRTC. The Commerce side the site can be monetize for paid services like providing materials. Thus creates a is very scalable application.  
 
 visit the hosted site: https://all-students-related.herokuapp.com/
+video explanation: https://drive.google.com/drive/folders/1vbGelzue7RUwZ6uzUKDt3j5jjpfQEmeD?usp=sharing
 
 Backend Overview:
 Node-Express server,
