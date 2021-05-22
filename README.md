@@ -4,10 +4,10 @@ SHEPHERD - An online website to revolutionize educational paradigm .
 visit the hosted site: https://all-students-related.herokuapp.com/
 
 Backend Overview:
-Node-Express server
-Authentication using PassportJs/Bcrypt(hashing)
-Chat feature using Socket.io
-Database MongoDB(Mongoose)
+Node-Express server,
+Authentication using PassportJs/Bcrypt(hashing),
+Chat feature using Socket.io,
+Database MongoDB(Mongoose),
 
 Mini features:
 After authentication you will be redirected to the previously requested page.
